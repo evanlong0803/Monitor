@@ -1,0 +1,216 @@
+body {
+    background: url(../images/bg.jpg);
+    background-size: cover;
+    /* 静止鼠标选中 */
+    user-select: none;
+}
+
+/* 数字字体 */
+@font-face {
+    font-family: handsomeWood;
+    src: url(../fonts/DS-DIGIT.TTF);
+}
+
+/* 去掉栅格之间的距离 */
+/* [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+} */
+
+/* 标题容器 */
+.header-container {
+    background: url(../images/head_bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+/* 标题 */
+.header-title {
+    font-size: 1.5625rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: lightblue;
+    font-weight: bold;
+}
+
+/* 整个图表容器 */
+.echart-content {
+    color: #ffeb7b;
+    height: 850px;
+}
+
+/* 设置左右两边列容器 */
+.left-chart-one,
+.right-chart-one,
+.left-chart-two,
+.right-chart-two,
+.left-chart-three,
+.right-chart-three {
+    height: 273px;
+    /* width: 100%; */
+    background: url(../images/line.png) no-repeat rgba(255, 255, 255, 0.03);
+    background-size: 100% 100%;
+}
+
+/* 头部小直角 */
+.chart-header::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-top: 2px solid #02a6b5;
+    border-left: 2px solid #02a6b5;
+}
+
+.chart-header::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-top: 2px solid #02a6b5;
+    border-right: 2px solid #02a6b5;
+}
+
+/* 底部小直角 */
+.chart-footer::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-bottom: 2px solid #02a6b5;
+    border-left: 2px solid #02a6b5;
+}
+
+.chart-footer::after {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    content: "";
+    height: 15px;
+    width: 15px;
+    border-bottom: 2px solid #02a6b5;
+    border-right: 2px solid #02a6b5;
+}
+
+/* 盒子标题 */
+.h5 {
+    padding: 20px 0;
+    font-weight: bold;
+    margin: 0;
+    color: rgba(114, 204, 204, 0.658);
+}
+
+
+/* 设置中间图表容器 */
+.echart-center {
+    height: 850px;
+}
+
+.center-chart-one {
+    height: 300px;
+    background: url(../images/line.png) no-repeat rgba(255, 255, 255, 0.04);
+    background-size: 100%;
+}
+
+.center-chart-two {
+    height: 550px;
+}
+
+
+/* 中间容器数字样式 */
+.wood-number {
+    font-size: 1.875rem;
+    font-family: handsomeWood;
+}
+
+/* 中间容器时间样式 */
+.echart-time {
+    font-size: 1.25rem;
+    font-family: handsomeWood;
+}
+
+/* 中间容器文本样式 */
+.wood-text {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: cornsilk;
+}
+
+/* 中间地图容器中的图片 */
+.center-chart-img-one {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 300px;
+    background: url(../images/map.png) no-repeat;
+    background-size: 100%;
+    background-position: center;
+    opacity: 0.3;
+}
+
+.center-chart-img-two {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 320px;
+    width: 320px;
+    border-radius: 50%;
+    background: url(../images/lbx.png) no-repeat;
+    background-size: 100%;
+    background-position: center;
+    opacity: 0.5;
+    animation: rotate 60s linear infinite;
+}
+
+.center-chart-img-three {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 325px;
+    width: 325px;
+    border-radius: 50%;
+    background: url(../images/jt.png) no-repeat;
+    background-size: 100%;
+    background-position: center;
+    opacity: 0.7;
+    animation: rotate1 30s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes rotate1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
