@@ -1,151 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>全国疫情实时监控 v3.0</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>全国疫情实时监控 v3.0</title>
+        <link rel="stylesheet" href="./css/bootstrap.min.css" />
+        <script src="./js/jquery-3.5.1.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="./css/dome.css" />
+        <script src="./js/HandsomeWood.js"></script>
+        <script src="./js/echarts.min.js"></script>
+        <script src="./js/china.js"></script>
+    </head>
 
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <script src="./js/jquery-3.5.1.min.js"></script>
-    <script src="./js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="./css/dome.css">
-    <script src="./js/HandsomeWood.js"></script>
-    <script src="./js/echarts.min.js"></script>
-    <script src="./js/china.js"></script>
-</head>
-
-<body>
-    <div class="container-fluid">
-        <header class="header-container row text-center p-4">
-            <div class="header-title col">全国疫情实时监控</div>
-        </header>
-        <section class="echart-content row text-center d-flex flex-row">
-            <div class="echart-left col-md">
-                <div class="left-chart-one position-relative m-1">
-                    <div class="chart-header w-100"></div>
-                    <div class="col h5">全国累计确诊省市</div>
-                    <div class="left-chart-one-chart col h-75"></div>
-                    <div class="chart-footer w-100"></div>
-                </div>
-                <div class="left-chart-two position-relative m-1">
-                    <div class="chart-header w-100"></div>
-                    <div class="col h5">全国累计趋势</div>
-                    <div class="left-chart-two-chart col h-75"></div>
-                    <div class="chart-footer w-100"></div>
-                </div>
-                <div class="left-chart-three position-relative m-1">
-                    <div class="chart-header w-100"></div>
-                    <div class="col h5">全国省市治愈 TOP10</div>
-                    <div class="left-chart-three-chart col h-75"></div>
-                    <div class="chart-footer w-100"></div>
-                </div>
-            </div>
-
-            <div class="echart-center col-md-5">
-                <div class="center-chart-one d-flex">
-                    <div class=" row w-100 pt-2 pb-2 align-items-center position-relative m-1">
+    <body>
+        <div class="container-fluid">
+            <!-- 头部 start -->
+            <header class="header-container row text-center p-4">
+                <div class="header-title col">全国疫情实时监控</div>
+                <div class="header-time position-absolute">当前时间</div>
+            </header>
+            <!-- 头部 end -->
+            <!-- 内容 start -->
+            <section class="echart-content row text-center d-flex flex-row">
+                <!-- 左列 start -->
+                <div class="echart-left col-md">
+                    <!-- 左1 start -->
+                    <div class="left-chart-one position-relative m-1">
                         <div class="chart-header w-100"></div>
-                        <div class="echart-time w-100"></div>
-                        <div class="w-100"></div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-danger">新增</span> <small
-                                    class="add-nowConfirm-number"></small>
-                            </div>
-                            <div class="wood-number nowConfirm-number"></div>
-                            <div class="wood-text text-nowrap">现有确诊</div>
-                        </div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-danger">新增</span> <small
-                                    class="add-noInfect-number"></small>
-                            </div>
-                            <div class="wood-number noInfect-number"></div>
-                            <div class="wood-text text-nowrap">无症状</div>
-                        </div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-danger">新增</span> <small
-                                    class="add-suspect-number"></small>
-                            </div>
-                            <div class="wood-number suspect-number"></div>
-                            <div class="wood-text text-nowrap">现有疑似</div>
-                        </div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-danger">新增</span> <small
-                                    class="add-nowSevere-number"></small>
-                            </div>
-                            <div class="wood-number nowSevere-number"></div>
-                            <div class="wood-text text-nowrap">现有重症</div>
-                        </div>
-                        <div class="w-100 m-2"></div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-warning">新增</span> <small
-                                    class="add-confirm-number"></small>
-                            </div>
-                            <div class="wood-number confirm-number"></div>
-                            <div class="wood-text text-nowrap">累计确诊</div>
-                        </div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-warning">新增</span> <small
-                                    class="add-importedCase-number"></small>
-                            </div>
-                            <div class="wood-number importedCase-number"></div>
-                            <div class="wood-text text-nowrap">境外输入</div>
-                        </div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-warning">新增</span> <small
-                                    class="add-heal-number"></small>
-                            </div>
-                            <div class="wood-number heal-number"></div>
-                            <div class="wood-text text-nowrap">累计治愈</div>
-                        </div>
-                        <div class="col p-2">
-                            <div class="text-nowrap"><span class="badge badge-warning">新增</span> <small
-                                    class="add-dead-number"></small>
-                            </div>
-                            <div class="wood-number dead-number"></div>
-                            <div class="wood-text text-nowrap">累计死亡</div>
-                        </div>
+                        <div class="col h5">全国累计确诊省市</div>
+                        <div class="left-chart-one-chart col h-75"></div>
                         <div class="chart-footer w-100"></div>
                     </div>
-                </div>
-                <div class="center-chart-two d-flex">
-                    <div class="row w-100 align-items-center justify-content-center position-relative m-1">
+                    <!-- 左1 end -->
+
+                    <!-- 左2 start -->
+                    <div class="left-chart-two position-relative m-1">
                         <div class="chart-header w-100"></div>
-                        <div class="center-chart-img-one"></div>
-                        <div class="center-chart-img-two"></div>
-                        <div class="center-chart-img-three"></div>
-                        <div class="center-chart-map h-100 w-100"></div>
+                        <div class="col h5">全国累计趋势</div>
+                        <div class="left-chart-two-chart col h-75"></div>
                         <div class="chart-footer w-100"></div>
                     </div>
+                    <!-- 左2 end -->
+
+                    <!-- 左3 start -->
+                    <div class="left-chart-three position-relative m-1">
+                        <div class="chart-header w-100"></div>
+                        <div class="col h5">全国省市治愈 TOP10</div>
+                        <div class="left-chart-three-chart col h-75"></div>
+                        <div class="chart-footer w-100"></div>
+                    </div>
+                    <!-- 左3 end -->
                 </div>
-            </div>
+                <!-- 左列 end -->
 
-            <div class="echart-right col-md">
-                <div class="right-chart-one position-relative m-1">
-                    <div class="chart-header w-100"></div>
-                    <div class="col h5">全国治愈/病死趋势</div>
-                    <div class="right-chart-one-chart col h-75"></div>
-                    <div class="chart-footer w-100"></div>
+                <!-- 中列 start -->
+                <div class="echart-center col-md-5">
+                    <!-- 中1 start -->
+                    <div class="center-chart-one d-flex">
+                        <div class="row w-100 pt-2 pb-2 align-items-center position-relative m-1">
+                            <div class="chart-header w-100"></div>
+                            <span class="echart-time w-100" style="color: whitesmoke;"></span>
+                            <div class="w-100"></div>
+                            <div class="col">
+                                <div class="wood-badge text-nowrap">
+                                    <span class="badge badge-danger">昨日</span>
+                                    <small class="add-nowConfirm-number"></small>
+                                </div>
+                                <div class="wood-number nowConfirm-number"></div>
+                                <div class="wood-text text-nowrap">
+                                    现有确诊
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-nowrap">
+                                    <span class="badge badge-danger">昨日</span>
+                                    <small class="add-noInfect-number"></small>
+                                </div>
+                                <div class="wood-number noInfect-number"></div>
+                                <div class="wood-text text-nowrap">无症状</div>
+                            </div>
+                            <div class="col">
+                                <div class="text-nowrap">
+                                    <span class="badge badge-danger">昨日</span>
+                                    <small class="add-suspect-number"></small>
+                                </div>
+                                <div class="wood-number suspect-number"></div>
+                                <div class="wood-text text-nowrap">
+                                    现有疑似
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-nowrap">
+                                    <span class="badge badge-danger">昨日</span>
+                                    <small class="add-nowSevere-number"></small>
+                                </div>
+                                <div class="wood-number nowSevere-number"></div>
+                                <div class="wood-text text-nowrap">
+                                    现有重症
+                                </div>
+                            </div>
+                            <div class="w-100 m-2"></div>
+                            <div class="col">
+                                <div class="text-nowrap">
+                                    <span class="badge badge-warning">新增</span>
+                                    <small class="add-confirm-number"></small>
+                                </div>
+                                <div class="wood-number confirm-number"></div>
+                                <div class="wood-text text-nowrap">
+                                    累计确诊
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-nowrap">
+                                    <span class="badge badge-warning">新增</span>
+                                    <small class="add-importedCase-number"></small>
+                                </div>
+                                <div class="wood-number importedCase-number"></div>
+                                <div class="wood-text text-nowrap">
+                                    境外输入
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-nowrap">
+                                    <span class="badge badge-warning">新增</span>
+                                    <small class="add-heal-number"></small>
+                                </div>
+                                <div class="wood-number heal-number"></div>
+                                <div class="wood-text text-nowrap">
+                                    累计治愈
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="text-nowrap">
+                                    <span class="badge badge-warning">新增</span>
+                                    <small class="add-dead-number"></small>
+                                </div>
+                                <div class="wood-number dead-number"></div>
+                                <div class="wood-text text-nowrap">
+                                    累计死亡
+                                </div>
+                            </div>
+                            <div class="chart-footer w-100"></div>
+                        </div>
+                    </div>
+                    <!-- 中1 end -->
+
+                    <!-- 中2 start -->
+                    <div class="center-chart-two d-flex">
+                        <div class="row w-100 align-items-center justify-content-center position-relative m-1">
+                            <div class="chart-header w-100"></div>
+                            <div class="center-chart-img-one"></div>
+                            <div class="center-chart-img-two"></div>
+                            <div class="center-chart-img-three"></div>
+                            <div class="center-chart-map h-100 w-100"></div>
+                            <div class="chart-footer w-100"></div>
+                        </div>
+                    </div>
+                    <!-- 中2 end -->
                 </div>
-                <div class="right-chart-two position-relative m-1">
-                    <div class="chart-header w-100"></div>
-                    <div class="col h5">全国新增趋势</div>
-                    <div class="right-chart-two-chart col h-75"></div>
-                    <div class="chart-footer w-100"></div>
+                <!-- 中列 end -->
+
+                <!-- 右列 start -->
+                <div class="echart-right col-md">
+                    <!-- 右1 start -->
+                    <div class="right-chart-one position-relative m-1">
+                        <div class="chart-header w-100"></div>
+                        <div class="col h5">全国治愈/病死趋势</div>
+                        <div class="right-chart-one-chart col h-75"></div>
+                        <div class="chart-footer w-100"></div>
+                    </div>
+                    <!-- 右1 end -->
+
+                    <!-- 右2 start -->
+                    <div class="right-chart-two position-relative m-1">
+                        <div class="chart-header w-100"></div>
+                        <div class="col h5">全国新增趋势</div>
+                        <div class="right-chart-two-chart col h-75"></div>
+                        <div class="chart-footer w-100"></div>
+                    </div>
+                    <!-- 右2 end -->
+
+                    <!-- 右3 start -->
+                    <div class="right-chart-three position-relative m-1">
+                        <div class="chart-header w-100"></div>
+                        <div class="col h5">境外输入省市 TOP10</div>
+                        <div class="right-chart-three-chart col h-75"></div>
+                        <div class="chart-footer w-100"></div>
+                    </div>
+                    <!-- 右3 end -->
                 </div>
-                <div class="right-chart-three position-relative m-1">
-                    <div class="chart-header w-100"></div>
-                    <div class="col h5">境外输入省市 TOP10</div>
-                    <div class="right-chart-three-chart col h-75"></div>
-                    <div class="chart-footer w-100"></div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-
-
-
-</body>
-
+                <!-- 右列 start -->
+            </section>
+            <!-- 内容 end -->
+        </div>
+    </body>
 </html>

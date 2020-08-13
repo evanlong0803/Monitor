@@ -41,6 +41,13 @@ body {
     font-weight: bold;
 }
 
+/* 标题当前时间 */
+.header-time {
+    font-size: 1.25rem;
+    font-family: handsomeWood;
+    color: lightblue;
+}
+
 /* 整个图表容器 */
 .echart-content {
     color: #ffeb7b;
@@ -65,7 +72,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    content: "";
+    content: '';
     height: 15px;
     width: 15px;
     border-top: 2px solid #02a6b5;
@@ -76,7 +83,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    content: "";
+    content: '';
     height: 15px;
     width: 15px;
     border-top: 2px solid #02a6b5;
@@ -88,7 +95,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    content: "";
+    content: '';
     height: 15px;
     width: 15px;
     border-bottom: 2px solid #02a6b5;
@@ -99,7 +106,7 @@ body {
     position: absolute;
     bottom: 0;
     right: 0;
-    content: "";
+    content: '';
     height: 15px;
     width: 15px;
     border-bottom: 2px solid #02a6b5;
@@ -113,7 +120,6 @@ body {
     margin: 0;
     color: rgba(114, 204, 204, 0.658);
 }
-
 
 /* 设置中间图表容器 */
 .echart-center {
@@ -130,11 +136,11 @@ body {
     height: 550px;
 }
 
-
 /* 中间容器数字样式 */
 .wood-number {
     font-size: 1.875rem;
     font-family: handsomeWood;
+    text-align: center;
 }
 
 /* 中间容器时间样式 */
@@ -157,43 +163,40 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 300px;
-    width: 300px;
+    height: 18.75rem;
+    width: 18.75rem;
     background: url(../images/map.png) no-repeat;
     background-size: 100%;
     background-position: center;
     opacity: 0.3;
 }
 
-.center-chart-img-two {
+/* .center-chart-img-two {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 320px;
-    width: 320px;
-    border-radius: 50%;
+    height: 20rem;
+    width: 20rem;
     background: url(../images/lbx.png) no-repeat;
     background-size: 100%;
     background-position: center;
     opacity: 0.5;
     animation: rotate 60s linear infinite;
-}
+} */
 
-.center-chart-img-three {
+/* .center-chart-img-three {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 325px;
-    width: 325px;
-    border-radius: 50%;
+    height: 20.3125rem;
     background: url(../images/jt.png) no-repeat;
     background-size: 100%;
     background-position: center;
     opacity: 0.7;
     animation: rotate1 30s linear infinite;
-}
+} */
 
 @keyframes rotate {
     0% {
@@ -212,5 +215,33 @@ body {
 
     100% {
         transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* 对手机端进行精确的兼容 */
+@media (max-width: 414px) {
+    .wood-number {
+        font-size: 17px;
+        font-family: handsomeWood;
+        text-align: center;
+    }
+    .wood-text {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        color: cornsilk;
+        text-align: center;
+    }
+    .text-nowrap {
+        transform: scale(0.85);
+    }
+    .echart-left {
+        order: 1;
+    }
+    .echart-center {
+        order: 0;
+    }
+    .echart-right {
+        order: 2;
     }
 }
