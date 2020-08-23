@@ -233,7 +233,7 @@ body {
         text-align: center;
     }
     .text-nowrap {
-        transform: scale(0.85);
+        transform: scale(0.9);
     }
     .echart-left {
         order: 1;
@@ -243,5 +243,8 @@ body {
     }
     .echart-right {
         order: 2;
+    }
+    .right-chart-three-chart {
+        margin-bottom: 50px;
     }
 }
