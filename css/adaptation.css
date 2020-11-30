@@ -24,10 +24,13 @@
     .echart-right {
         order: 2;
     }
+
+    /* 手机端底部 */
     .right-chart-three-chart {
-        margin-bottom: 45px;
+        padding-bottom: 15rem;
     }
 
+    /* 动态效果 */
     .center-chart-img-one {
         position: absolute;
         top: 50%;
