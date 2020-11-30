@@ -1,0 +1,60 @@
+/* 对手机端进行精确的兼容 */
+@media (max-width: 414px) {
+    .wood-number {
+        font-size: 17px;
+        font-family: handsomeWood;
+        text-align: center;
+    }
+    .wood-text {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: bold;
+        color: cornsilk;
+        text-align: center;
+    }
+    .text-nowrap {
+        transform: scale(0.9);
+    }
+    .echart-left {
+        order: 1;
+    }
+    .echart-center {
+        order: 0;
+    }
+    .echart-right {
+        order: 2;
+    }
+    .right-chart-three-chart {
+        margin-bottom: 45px;
+    }
+
+    .center-chart-img-one {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 15rem;
+        opacity: 0.3;
+    }
+
+    .center-chart-img-two {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 20rem;
+        opacity: 0.5;
+        animation: rotate 60s linear infinite;
+        z-index: -10;
+    }
+
+    .center-chart-img-three {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 16.5rem;
+        opacity: 0.7;
+        animation: rotate1 30s linear infinite;
+    }
+}
