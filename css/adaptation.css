@@ -2,18 +2,20 @@
 @media (max-width: 414px) {
     .wood-number {
         font-size: 17px;
-        font-family: handsomeWood;
-        text-align: center;
     }
     .wood-text {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 13px;
-        font-weight: bold;
-        color: cornsilk;
-        text-align: center;
+        font-size: 12px;
     }
-    .text-nowrap {
-        transform: scale(0.9);
+
+    /* 标题 */
+    .header-title {
+        font-size: 1.25rem;
+    }
+
+    .wood-text,
+    .wood-number {
+        text-align: center;
+        /* transform: scale(0.8); */
     }
     .echart-left {
         order: 1;
@@ -26,38 +28,20 @@
     }
 
     /* 手机端底部 */
-    .right-chart-three-chart {
-        padding-bottom: 15rem;
+    .echart-right {
+        padding-bottom: 1.5rem;
     }
 
     /* 动态效果 */
     .center-chart-img-one {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         height: 15rem;
-        opacity: 0.3;
     }
 
     .center-chart-img-two {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         height: 20rem;
-        opacity: 0.5;
-        animation: rotate 60s linear infinite;
-        z-index: -10;
     }
 
     .center-chart-img-three {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         height: 16.5rem;
-        opacity: 0.7;
-        animation: rotate1 30s linear infinite;
     }
 }
