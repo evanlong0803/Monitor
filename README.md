@@ -1,7 +1,5 @@
 # 疫情实时监控
 
-[![star](https://gitee.com/handsomewood/Monitor/badge/star.svg?theme=dark)](https://gitee.com/handsomewood/Monitor/stargazers)  [![fork](https://gitee.com/handsomewood/Monitor/badge/fork.svg?theme=dark)](https://gitee.com/handsomewood/Monitor/members)
-
 ## 支持
 
 1. 使用`bootstrap4`盒子布局
